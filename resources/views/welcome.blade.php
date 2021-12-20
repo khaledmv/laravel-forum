@@ -18,24 +18,40 @@
         </style>
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="">
-                    @auth
-                        <a href="{{ url('/home') }}" class="">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="">Register</a>
-                        @endif
-                    @endauth
+                
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;">
+                <div class="container" >
+                  <a class="navbar-brand" href="#">Navbar</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    @if (Route::has('login'))
+                    <ul class="navbar-nav ms-md-auto">
+                       
+                        @auth
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ url('/home') }}">Dashboard</a>
+                      </li>
+                      @else
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}" >Log in</a>
+                      </li>
+                      @if (Route::has('register'))
+                      <li class="nav-item">
+                        <a class="nav-link" href="{{ route('register') }}">Register</a>
+                      </li>
+                      @endif
+                      @endauth
+                    </ul>
+                    @endif
+                  </div>
                 </div>
-            @endif
+              </nav>
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <h1> Larvel Forum</h1>
-            </div>
-        </div>
+            <main class="container mt-2">
+               <h1>Laravel </h1>
+            </main>
+    
     </body>
 </html>
