@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\QuestionController;
 
 /*
@@ -22,3 +23,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/',[QuestionController::class, 'index'] )->name('index');
+Route::resource('question', QuestionController::class);
+
+
