@@ -1,0 +1,5 @@
+Factory(App\Models\User::class, 3)->create()->each(function($u){
+            $u->questions()->saveMany(
+                Factory(App\Models\Question::class, rand(1, 5))->make()
+            );
+        });
