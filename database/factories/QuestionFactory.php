@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class QuestionFactory extends Factory
@@ -15,9 +16,12 @@ class QuestionFactory extends Factory
      */
     public function definition()
     {
+        $title = $this->faker->sentence;
+        $slug = Str::slug($title, '-');
+        
         return [
             'title' => rtrim($this->faker->sentence(rand(5,10)), "."),
-            'slug' => $this->faker->sentence(),
+            'slug' => $slug,
             'body' => $this->faker->paragraphs(rand(3,7), true),
             'view'=> rand(0,10),
             'answers' => rand(0,10),

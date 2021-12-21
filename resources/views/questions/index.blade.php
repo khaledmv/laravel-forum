@@ -14,7 +14,7 @@
                     Featured
                   </div>
                   <div class="card-body">
-                    <h5 class="card-title"><a href="{{ $questions->url }}">{{ $questions->title }}</a></h5>
+                    <h5 class="card-title"><a href="{{ $questions->url  }}">{{ $questions->title }}</a></h5>
                     <h6 class="card-subtitle mb-2 text-muted">Asked by <a href="{{ $questions->user->url }}"> {{ $questions->user->name }} </a>
                         <small class="card-subtitle mb-2 text-muted"> {{ $questions->created_date }} </small>
                     </h6>

@@ -24,7 +24,11 @@ class Question extends Model
     }
 
     public function getUrlAttribute(){
-        return route("question.show", $this->id);
+
+        // $slug = Str::slug($this->slug, '-');
+        // // return route("question.show",  );
+        return route("question.show", $this->slug);
+        
     }
 
    public function getCreatedDateAttribute(){
