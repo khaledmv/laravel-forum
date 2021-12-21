@@ -16,7 +16,10 @@
                   <div class="card-body">
                     <h5 class="card-title">{{ $question->title }}</h5>
                    
-                    <p class="card-text"> {{ $question->body }} </p>
+                    {{-- <p class="card-text"> {!! $question->body_html !!} </p> --}}
+                    {{-- <p class="card-text"> {{ $question->body }} </p> --}}
+
+                    <p class="card-text">{!! parsedown($question->body) !!} </p>
                     
                   </div>
                   
